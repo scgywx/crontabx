@@ -97,7 +97,9 @@ class CrontabX
 				sleep(1);
 			}else{
 				$ms = 1000 - (int)(((microtime(true) - $now)) * 1000);
-				usleep($ms * 1000);
+				if($ms > 0){
+					usleep($ms * 1000);
+				}
 			}
 			
 			pcntl_signal_dispatch();
