@@ -1,6 +1,6 @@
 <?php
 if($_SERVER['argc'] < 2){
-	echo "usage: php crontab.php config.php\n";
+	echo "usage: php crontab.php config.php [start|stop|restart]\n";
 	exit;
 }
 
@@ -46,9 +46,6 @@ class CrontabX
 				break;
 			case 'restart':
 				$this->restart();
-				break;
-			case 'help':
-				$this->help();
 				break;
 			default:
 				echo "invalid op code\n";
